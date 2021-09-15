@@ -8,7 +8,7 @@ describe('PlayerView', () => {
     const player = new Player('trevor')
     const wrapper = render(<PlayerView player={player}/>);
 
-    expect(wrapper.getByText('trevor(score: 0)(cards: 0)'));
+    expect(wrapper.getByText('trevor | Score: 0 | Cards: 0'));
   })
 
   it('also renders their specific score and cards left', () => {
@@ -17,6 +17,6 @@ describe('PlayerView', () => {
 
     const wrapper = render(<PlayerView player={player}/>);
 
-    expect(wrapper.getByText('trevor(score: 7)(cards: 3)'));
+    expect(wrapper.getByText('trevor | Score: 7 | Cards: 3'));
   })
 })

@@ -2,6 +2,8 @@ import React from 'react';
 import TurnFormView from './TurnFormView'
 import PlayerView from './PlayerView'
 import ResultsView from './ResultsView'
+import CardView from './CardView'
+
 export default class GameView extends React.Component {
   constructor(props) {
     super(props)
@@ -24,13 +26,20 @@ export default class GameView extends React.Component {
     return (
       <div>
         <h1>Game Page</h1>
-        <h3>Players:</h3>
+        <h3 className={'italic'}>Players:</h3>
         <ul>
           {this.game().players().map((player) => <PlayerView player={player}/>)}
         </ul>
+        <h3 className={'italic'}>Hand:</h3>
+        <div className={'hand'}>
+          {this.game().currentPlayer().hand().map((card) => <CardView rank={card.rank()} suit={card.suit()}/>)}
+        </div>
+        <h3 className={'italic'}>Make Selection:</h3>
         <TurnFormView game={this.game()} onSubmitTurn={this.playRound.bind(this)}/>
-        <h3>Game Log:</h3>
-        <ResultsView results={this.game().roundResults()}/>
+        <h3 className={'italic'}>Game Log:</h3>
+        <div className={'game-log'}>
+          <ResultsView results={this.game().roundResults()}/>
+        </div>
       </div>
     )
   }

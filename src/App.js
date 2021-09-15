@@ -28,7 +28,7 @@ export default class App extends React.Component {
   render() {
     if(this.state.game){
       if(this.state.game.over()){
-        return <GameOverView game={this.state.game}/>
+        return <GameOverView game={this.state.game} playAgain={this.updateGame.bind(this)}/>
       } else {
         return <GameView onSubmit={this.updateGame.bind(this)} game={this.state.game}/>
       }

@@ -6,14 +6,14 @@ describe('loginView', () => {
 
     expect(wrapper.getByTestId('name'));
     expect(wrapper.getByTestId('submit'));
-    expect(wrapper.getByText('Name:'));
+    expect(wrapper.getByText('Enter Name:'));
   })
 
   it('allows submission of a non empty input', () => {
     const testfunc = jest.fn()
     const view = render(<LoginView onSubmit={testfunc} />);
 
-    const nameInput = view.getByLabelText('Name:');
+    const nameInput = view.getByTestId('name');
     const submitButton = view.getByTestId('submit');
     fireEvent.change(nameInput,{target:{value:'trevor'}})
     fireEvent.click(submitButton)

@@ -1,3 +1,7 @@
+
+/* className={'green'} */
+/* use above to apply classes */
+
 .App {
   text-align: center;
 }
@@ -28,6 +32,89 @@
   color: #61dafb;
 }
 
+.card {
+  border: 1px solid rgb(96, 164, 187);
+  border-radius: 25px;
+  padding: 1rem;
+  background: lightblue;
+  margin: 0 auto;
+}
+
+.max-card {
+  max-width: 600px;
+  min-height: 500px;
+}
+
+.center-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  height: 30px;
+  font-size: 20px;
+  margin: 0 auto;
+}
+.button {
+  height: 35px;
+}
+.game-log {
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 20px;
+  min-height: 200px;
+  color: white;
+}
+
+.italic {
+  font-style: italic;
+}
+.playingcard {
+  margin-right: -15px;
+  height: 85px;
+}
+.font-lg {
+  font-size: larger;
+}
+.bold {
+  font-weight: bold;
+
+}
+.full-width {
+  width: 80%;
+}
+.margin-top--xl {
+  margin-top:10rem;
+}
+.center {
+  margin: 0 auto;
+}
+.card--no-padding {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+}
+
+.card--lobby {
+  min-height: 50vh;
+}
+
+.margin-right {
+  margin-right: 1rem;
+}
+
+.margin-left {
+  margin-left: 3.5rem;
+}
+
+.margin-right--sm {
+  margin-right: .5rem;
+}
+
+.margin-bottom--sm {
+  margin-bottom: 2rem;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
