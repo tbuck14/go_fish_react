@@ -11,17 +11,30 @@ describe('GameView', () => {
     const wrapper = render(<GameView game={game}/>);
 
     expect(wrapper.getByText('Game Page'));
+    expect(wrapper.getByText('Players:'));
+    expect(wrapper.getByText('Game Log:'));
   })
 
-  it('displays the players in the game', () => {
-    const player = new Player('trevor')
-    const game = new Game([player])
-    const wrapper = render(<GameView game={game}/>);
+  describe('#game', () => {
+    it('returns the game object', () => {
+      const player = new Player('trevor')
+      const game = new Game([player])
+      const view = new GameView({game: game})
 
-    expect(wrapper.getByText('Players:'));
-    expect(wrapper.getByText('trevor'));
-    expect(wrapper.getByText('bot1'));
-    expect(wrapper.getByText('bot2'));
-    expect(wrapper.getByText('bot3'));
+      expect(view.game()).toEqual(game)
+    })
+  })
+
+  describe('#playRound', () => {
+    it('calls onSubmit properly', () => {
+      const func = jest.fn()
+      const player = new Player('trevor')
+      const game = new Game([player])
+
+      const view = new GameView({game: game, onSubmit: func})
+
+      view.playRound('bot1', 'A')
+      expect(func).toBeCalled
+    })
   })
 })

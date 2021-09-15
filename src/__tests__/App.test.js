@@ -5,6 +5,6 @@ import LoginView from '../LoginView.js';
 
 describe('App', () => {
   it('', () => {
-    
+
   })
 })
