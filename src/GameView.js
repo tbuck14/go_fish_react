@@ -28,7 +28,7 @@ export default class GameView extends React.Component {
         <h1>Game Page</h1>
         <h3 className={'italic'}>Players:</h3>
         <ul>
-          {this.game().players().map((player) => <PlayerView player={player}/>)}
+          {this.game().players().map((player) => <PlayerView  key={player.name()} player={player}/>)}
         </ul>
         <h3 className={'italic'}>Hand:</h3>
         <div className={'hand'}>

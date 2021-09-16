@@ -3,6 +3,7 @@ import BotPlayer from './BotPlayer'
 const cardsPerPlayer = 5
 const ranks = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
 export default class Game {
+  static botNames = ['Wal-E', 'R2-D2', 'Karen', 'Terminator']
   constructor(players, deck = new Deck(), numberOfBots = 3) {
     this._players = players
     this._deck = deck
@@ -111,7 +112,7 @@ export default class Game {
 
   addBots(numberOfBots) {
     Array.from(Array(numberOfBots)).forEach(() => {
-      this.players().push(new BotPlayer(`bot${this.players().length}`))
+      this.players().push(new BotPlayer(`${Game.botNames[this.players().length -1]}`))
     })
   }
 

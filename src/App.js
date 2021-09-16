@@ -4,6 +4,7 @@ import LoginView from './LoginView.js';
 import GameView from './GameView.js';
 import GameOverView from './GameOverView.js';
 import Game from './Game.js';
+import Deck from './Deck.js';
 import Player from './Player.js';
 
 export default class App extends React.Component {
@@ -12,10 +13,10 @@ export default class App extends React.Component {
     this.state = {}
   }
 
-  startGame(name) {
+  startGame(e) {
     this.setState(() => {
-      const player = new Player(name)
-      const game = new Game([player])
+      const player = new Player(e.target.name.value)
+      const game = new Game([player], new Deck(), parseInt(e.target.bots.value))
       game.start()
       return { game }
     })
